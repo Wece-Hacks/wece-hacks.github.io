@@ -1,0 +1,269 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('lofiarcade03.jpeg');
+    /*background-color: #cac5f4;*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    scroll-behavior: smooth;
+  }
+
+  /* Styling the panel itself */
+  .panel {
+    position: sticky;
+    background-color: #baa3fa;
+    top: 0; /* Aligns to the top of the viewport */
+    width: 100%; /* Full width */
+    display: flex; /* Align items in a row */
+    justify-content: space-around; /* Equal spacing between links */
+    padding: 10px; /* Space around links */
+  }
+
+  /* Styling the links */
+  .panel a {
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust text size */
+    font-weight: bold; /* Optional: Bold text */
+    padding: 5px 10px; /* Add spacing inside the clickable area */
+    border-radius: 4px; /* Optional: Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  }
+
+  /* Hover effect for links */
+  .panel a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    color: #f0f0f0; /* Optional: Slightly dim the text on hover */
+  }
+
+  /* Add spacing between sections to prevent overlap */
+  .section {
+    padding-top: 80px; /* Matches or exceeds the panel height to prevent overlap */
+    margin-top: -80px; /* Counteracts padding to keep sections aligned */
+  }
+
+  /* Hero section */
+  
+
+  .content {
+    width: 60%;
+    padding-top: 100px;
+    text-align: center;
+    padding-bottom: 100px;
+  }
+
+  .content p {
+    font-size: 18px;
+    color: #333;
+  }
+  .content h1 {
+    font-size: 60px;
+    color: #ffffff;
+  }
+
+  .content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;  /* Horizontally centers the image */
+    align-items: center;      /* Vertically centers the image */
+    min-height: 50vh;         /* Adjusts the height to 50% of the viewport */
+    margin-top: 20px;         /* Add some space above the container */
+    margin-bottom: 20px;      /* Add some space below the container */
+  }
+
+  .resized-image {
+    width: 50%;   /* Makes the image 50% of its original size */
+    height: auto; /* Keeps the aspect ratio */
+  }
+
+  .section {
+    width: 80%;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  #get-started {
+    margin-top: 100px;
+  }
+
+  /* get-started text */
+  #get-started p {
+    font-size: 20px;
+  }
+
+  #registration-button {
+    padding: 10px 20px; 
+    background-color: #baa3fa; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+  }
+
+  .section h2 {
+    font-size: 25px;
+    color: #333;
+  }
+
+  .section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .section img {
+    flex: 1;
+    max-width: 40%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  #countdown-timer {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  #timer {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+  #sponsors {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .sponsors-section {
+    width: 84%;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 40px; /* Added space between sections */
+  }
+
+  .sponsors-section .sponsor {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.0);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .sponsors-section .sponsor img {
+    max-width: 30%;
+    border-radius: 5px;
+  }
+
+  .sponsors-section .sponsor p {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .sponsor-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Spacing between images */
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+  }
+
+  .sponsor-images img {
+    max-width: 100px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+  }
+  .faq-section {
+    width: 80.5%;
+    margin-top: 60px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .faq-section h2 {
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+  }
+
+  .faq-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .faq-section .faq-item {
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-section .faq-item strong {
+    color: #333;
+  }
+
+  .schedule-section {
+    width: 80%;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tools-resources-section {
+    width: 79%;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px; /* Added space between sections */
+  }
+
+  .tools-resources-section h2 {
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+  }
+
+  .tools-resources-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* title of the main WECE hacks logo */
+  #title {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
