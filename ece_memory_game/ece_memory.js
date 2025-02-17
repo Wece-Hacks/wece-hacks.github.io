@@ -5,12 +5,12 @@ const cardsArray = [
     {name: 'and', img:"and.png"},
     {name: 'not_gate', img:"not_gate.png"},
     {name: 'not', img:"not.jpg"},
-    //{name: 'circuit q1', img:},
-    //{name: 'circuit a1', img:},
-    //{name: 'circuit q2', img:},
-    //{name: 'circuit a2', img:},
-    //{name: 'circuit q3', img:},
-    //{name: 'circuit a3', img:}
+    {name: 'circuit q1', img:"s-r_latch.png"},
+    {name: 'circuit a1', img:"s-r.png"},
+    {name: 'circuit q2', img:"xor_gate.png"},
+    {name: 'circuit a2', img:"xor.png"},
+    {name: 'circuit q3', img:"flip_flop.jpg"},
+    {name: 'circuit a3', img:"flip_flop_circuit.png"}
 ];
 
 let gameGrid = [...cardsArray]; //the '...' is a spread operator separating the array into individual els
@@ -29,7 +29,7 @@ gameGrid.forEach(item => {
     /*creating a div element in the html with class "front"*/
     const frontFace = document.createElement('div');
     frontFace.classList.add('front');
-    frontFace.innerHTML = '?';
+    frontFace.innerHTML = '';
 
     /*creating a div element in the html with class "back" and img from object*/
     const backFace = document.createElement('img');
@@ -97,4 +97,27 @@ function unflipCards() {
 
 function resetBoard() {
     [firstCard, secondCard, lockBoard] = [null, null, false];
+}
+
+let matchedPairs = 0;
+const totalPairs = cardsArray.length / 2; // Total pairs to match
+
+function checkMatch() {
+    if (connectedPairs(firstCard.dataset.name, secondCard.dataset.name)) {
+        disableCards();
+        matchedPairs++;
+        if (matchedPairs === totalPairs) {
+            displayWinMessage();
+        }
+    } else {
+        unflipCards();
+    }
+}
+
+function displayWinMessage() {
+    // Create a div for the win screen
+    const winScreen = document.createElement('div');
+    winScreen.classList.add('win-screen');
+    winScreen.innerHTML = '<h2>wecehacksctf{m3m0ry_gAm3}</h2>';
+    document.body.appendChild(winScreen);
 }
