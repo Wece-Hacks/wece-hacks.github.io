@@ -1,10 +1,10 @@
 const cardsArray = [
     {name: 'or_gate', img:"or_gate.png"},
-    //{name: 'or', img:},
+    {name: 'or', img:"or.jpeg"},
     {name: 'and_gate', img:"and_gate.jpg"},
-    //{name: 'and', img:},
+    {name: 'and', img:"and.png"},
     {name: 'not_gate', img:"not_gate.png"},
-    //{name: 'not', img:},
+    {name: 'not', img:"not.jpg"},
     //{name: 'circuit q1', img:},
     //{name: 'circuit a1', img:},
     //{name: 'circuit q2', img:},
@@ -13,7 +13,7 @@ const cardsArray = [
     //{name: 'circuit a3', img:}
 ];
 
-let gameGrid = [...cardsArray, ...cardsArray]; //the '...' is a spread operator separating the array into individual els
+let gameGrid = [...cardsArray]; //the '...' is a spread operator separating the array into individual els
 gameGrid.sort(() => 0.5 - Math.random());
 
 let firstCard = null;
@@ -77,7 +77,7 @@ function connectedPairs(name1, name2) {
         'circuit q2': 'circuit a2',
         'circuit q3': 'circuit a3'
     };
-    return pairs[name1] === name2;
+    return (pairs[name1] === name2) || (pairs[name2] == name1);
 }
 
 function disableCards() {
