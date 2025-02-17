@@ -118,6 +118,6 @@ function displayWinMessage() {
     // Create a div for the win screen
     const winScreen = document.createElement('div');
     winScreen.classList.add('win-screen');
-    winScreen.innerHTML = '<h2>wecehacksctf{m3m0ry_gAm3}</h2>';
+    winScreen.innerHTML = '<h2>flag!</h2>';
     document.body.appendChild(winScreen);
 }
