@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">             
-  <title>Pacman Game</title>
-  <link rel="stylesheet" href="pacman.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man Game</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background: black;
+        }
+    </style>
 </head>
 <body>
-<div id="shim">shim for font face</div>
-
-<h1>HTML5 Pacman</h1>
-
-<p><a href="https://github.com/daleharvey/pacman" target="_blank">Credits: https://github.com/daleharvey/pacman</a></p>
-
-<div id="pacman"></div>
-
-<script src="pacman.js"></script>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <script src="pacman.js"></script>
 </body>
 </html>
