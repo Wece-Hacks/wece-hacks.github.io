@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Jump Game</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { background: skyblue; display: block; }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const mario = {
+            x: 50,
+            y: canvas.height - 100,
+            width: 50,
+            height: 50,
+            velocityY: 0,
+            gravity: 0.5,
+            jumpPower: -10,
+            onGround: false
+        };
+        
+        const ground = {
+            x: 0,
+            y: canvas.height - 50,
+            width: canvas.width,
+            height: 50
+        };
+        
+        let keys = {};
+        
+        window.addEventListener("keydown", (e) => {
+            keys[e.code] = true;
+        });
+        
+        window.addEventListener("keyup", (e) => {
+            keys[e.code] = false;
+        });
+        
+        function update() {
+            if (keys["ArrowRight"]) {
+                mario.x += 5;
+            }
+            if (keys["Space"] && mario.onGround) {
+                mario.velocityY = mario.jumpPower;
+                mario.onGround = false;
+            }
+            
+            mario.velocityY += mario.gravity;
+            mario.y += mario.velocityY;
+            
+            if (mario.y + mario.height >= ground.y) {
+                mario.y = ground.y - mario.height;
+                mario.velocityY = 0;
+                mario.onGround = true;
+            }
+        }
+        
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "red";
+            ctx.fillRect(mario.x, mario.y, mario.width, mario.height);
+            
+            ctx.fillStyle = "green";
+            ctx.fillRect(ground.x, ground.y, ground.width, ground.height);
+        }
+        
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+        
+        gameLoop();
+    </script>
+</body>
+</html>
