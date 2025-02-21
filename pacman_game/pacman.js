@@ -1,24 +1,36 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-const pacman = {
-    x: 200,
-    y: 200,
-    radius: 15,
-    speed: 2,
-    angle: 0.2,
-    direction: 'right'
-};
+const pacman = { x: 200, y: 200, radius: 15, speed: 2, angle: 0.2, direction: 'right' };
+let ghosts = [];
+let fruits = [];
+let score = 0;
+const maxScore = 7;
 
-const ghosts = [
-    { x: 100, y: 100, radius: 15, color: 'red', speed: 1 },
-    { x: 300, y: 300, radius: 15, color: 'pink', speed: 1 }
-];
+function getRandomPosition(radius) {
+    let x, y, overlapping;
+    do {
+        x = Math.random() * (canvas.width - 2 * radius) + radius;
+        y = Math.random() * (canvas.height - 2 * radius) + radius;
+        overlapping = ghosts.some(ghost => Math.hypot(x - ghost.x, y - ghost.y) < radius * 2) ||
+                      fruits.some(fruit => Math.hypot(x - fruit.x, y - fruit.y) < radius * 2);
+    } while (overlapping);
+    return { x, y };
+}
 
-const fruits = [
-    { x: 150, y: 150, eaten: false },
-    { x: 250, y: 250, eaten: false }
-];
+function generateGhosts() {
+    ghosts = [
+        { ...getRandomPosition(15), radius: 15, color: 'red', speed: 2 },
+        { ...getRandomPosition(15), radius: 15, color: 'pink', speed: 2 }
+    ];
+}
+
+function generateFruits() {
+    fruits = Array.from({ length: 5 }, () => ({
+        ...getRandomPosition(5),
+        eaten: false
+    }));
+}
 
 function drawPacman() {
     ctx.beginPath();
@@ -51,6 +63,12 @@ function drawFruits() {
     });
 }
 
+function drawScore() {
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'white';
+    ctx.fillText(`Score: ${score}`, 10, 20);
+}
+
 function updatePacman() {
     switch (pacman.direction) {
         case 'right':
@@ -74,28 +92,52 @@ function updatePacman() {
 
 function updateGhosts() {
     ghosts.forEach(ghost => {
-        ghost.x += ghost.speed * (Math.random() < 0.5 ? 1 : -1);
-        ghost.y += ghost.speed * (Math.random() < 0.5 ? 1 : -1);
+        ghost.x += ghost.speed * (Math.random() < 0.5 ? 2 : -2);
+        ghost.y += ghost.speed * (Math.random() < 0.5 ? 2 : -2);
+
+        if (ghost.x - ghost.radius < 0) ghost.x = ghost.radius;
+        if (ghost.x + ghost.radius > canvas.width) ghost.x = canvas.width - ghost.radius;
+        if (ghost.y - ghost.radius < 0) ghost.y = ghost.radius;
+        if (ghost.y + ghost.radius > canvas.height) ghost.y = canvas.height - ghost.radius;
     });
 }
 
-function checkFruitCollision() {
+function checkCollisions() {
+    for (let ghost of ghosts) {
+        if (Math.hypot(pacman.x - ghost.x, pacman.y - ghost.y) < pacman.radius + ghost.radius) {
+            score = 0;
+            resetGame();
+            return;
+        }
+    }
     fruits.forEach(fruit => {
-        if (!fruit.eaten) {
-            const dist = Math.hypot(pacman.x - fruit.x, pacman.y - fruit.y);
-            if (dist < pacman.radius) fruit.eaten = true;
+        if (!fruit.eaten && Math.hypot(pacman.x - fruit.x, pacman.y - fruit.y) < pacman.radius) {
+            fruit.eaten = true;
         }
     });
 }
 
 function checkWinCondition() {
     if (fruits.every(fruit => fruit.eaten)) {
-        ctx.font = '30px Arial';
-        ctx.fillStyle = 'white';
-        ctx.fillText('flag!', canvas.width / 2 - 40, canvas.height / 2);
-        return true;
+        score++;
+        if (score >= maxScore) {
+            ctx.font = '30px Arial';
+            ctx.fillStyle = 'white';
+            ctx.fillText('flag!', canvas.width / 2 - 40, canvas.height / 2);
+            return true;
+        } else {
+            resetGame();
+        }
     }
     return false;
+}
+
+function resetGame() {
+    pacman.x = 200;
+    pacman.y = 200;
+    pacman.direction = 'right';
+    generateGhosts();
+    generateFruits();
 }
 
 function clearCanvas() {
@@ -107,9 +149,10 @@ function gameLoop() {
     drawPacman();
     drawGhosts();
     drawFruits();
+    drawScore();
     updatePacman();
     updateGhosts();
-    checkFruitCollision();
+    checkCollisions();
     if (!checkWinCondition()) {
         requestAnimationFrame(gameLoop);
     }
@@ -132,4 +175,6 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+generateGhosts();
+generateFruits();
 gameLoop();
