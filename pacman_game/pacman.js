@@ -5,7 +5,7 @@ const pacman = { x: 200, y: 200, radius: 15, speed: 2, angle: 0.2, direction: 'r
 let ghosts = [];
 let fruits = [];
 let score = 0;
-const maxScore = 7;
+const maxScore = 5;
 
 function getRandomPosition(radius) {
     let x, y, overlapping;
@@ -123,7 +123,7 @@ function checkWinCondition() {
         if (score >= maxScore) {
             ctx.font = '30px Arial';
             ctx.fillStyle = 'white';
-            ctx.fillText('flag!', canvas.width / 2 - 40, canvas.height / 2);
+            ctx.fillText('wecehacksctf{i_can_play_pAcMaN}', canvas.width / 2 - 40, canvas.height / 2);
             return true;
         } else {
             resetGame();
