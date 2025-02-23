@@ -5,7 +5,7 @@ const pacman = { x: 200, y: 200, radius: 15, speed: 2, angle: 0.2, direction: 'r
 let ghosts = [];
 let fruits = [];
 let score = 0;
-const maxScore = 5;
+const maxScore = 7;
 
 function getRandomPosition(radius) {
     let x, y, overlapping;
