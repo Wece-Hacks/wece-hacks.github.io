@@ -121,9 +121,7 @@ function checkWinCondition() {
     if (fruits.every(fruit => fruit.eaten)) {
         score++;
         if (score >= maxScore) {
-            ctx.font = '30px Arial';
-            ctx.fillStyle = 'white';
-            ctx.fillText('wecehacksctf{i_can_play_pAcMaN}', canvas.width / 2 - 40, canvas.height / 2);
+            document.getElementById('winMessage').innerText = 'wecehacksctf{i_can_play_pAcMaN}';
             return true;
         } else {
             resetGame();
@@ -131,6 +129,7 @@ function checkWinCondition() {
     }
     return false;
 }
+
 
 function resetGame() {
     pacman.x = 200;

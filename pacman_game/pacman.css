@@ -2,3 +2,17 @@ h1, p {
     text-align: center;      /* Centers vertically */
     font-family: 'Courier New', Courier, monospace;
 }
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+}
+
+#winMessage {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px; /* Adds spacing without affecting the canvas */
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
