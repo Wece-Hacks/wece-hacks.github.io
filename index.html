@@ -3,13 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">             
-  <title>WECE Hacks 2025</title>
+  <title>WECEHacks 2026</title>
   <link rel="stylesheet" href="index.css">
+
+  <!-- Link to Cinzel font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+
+  <!-- Link to Libre Baskerville font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
   
-  <!-- Button Panel -->
-  <div class="panel">
+  <!-- Header -->
+  <div class="header">
     <a href="#home" class="scroll-link">Home</a>
     <a href="#get-started" class="scroll-link">Get Started</a>
     <a href="#sponsors" class="scroll-link">Sponsors</a>
@@ -20,40 +30,42 @@
   
   <!-- hero section -->
   <div class="content" id="home">
-    <h1 id="title">WECE  HACKS  2025</h1>
-    <img src="WECELOGO.png" alt="Women in Electrical & Computer Engineering Logo" />
+     <img src="images/WECEHACKS-2026.png" alt="WECEHacks Title" />
   </div>
 
-  <div id="countdown-timer">
-    <h2>February 21st-23rd!</h2>
-  </div>
+  <div class="countdown">
+    <div id="date">
+      <h2>February 21-22</h2>
+    </div>
 
-  <div id="timer">
-    <span id="days">00</span> Days 
-    <span id="hours">00</span> Hours 
-    <span id="minutes">00</span> Minutes 
-    <span id="seconds">00</span> Seconds
-  </div>
-
-  <!-- Sections -->
-  <div class="section" id="get-started">
-    <img src="arcade_gif.gif" alt="Animated GIF for Get Started section" />
-    <div>
-      <h2>Welcome to WECE Hacks 2025!</h2>
-      <p>Presented by Women in Electrical & Computer Engineering at the University of Illinois Urbana-Champaign, join us for a three-day event filled with hardware, software, and cybersecurity challenges! Learn how to hack into a website, build a dinosaur game in Arduino, and work with JavaScript! We are open to ALL majors and genders.</p>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSceCxvTO8y0vbgcolWh7y8m2PVUMlMeAtlKgpkC113mWGKzNQ/viewform?usp=header" target="_blank" style="text-decoration: none;">
-  <button id="registration-button">
-    Register Now!
-  </button>
-</a>
+    <div id="timer">
+      <span id="days">00</span> Days 
+      <span id="hours">00</span> Hours 
+      <span id="minutes">00</span> Minutes 
+      <span id="seconds">00</span> Seconds
     </div>
   </div>
 
-  <div class="sponsors-section" id="sponsors">
-    <h2>Sponsors</h2>
-    <p>Our event is proudly supported by leading companies and organizations!</p>
+  <!-- What's WECEHacks 2026? -->
+  <div class="intro-section">
+    <!-- <img src="arcade_gif.gif" alt="Animated GIF for Get Started section" /> -->
+    <div>
+      <h1>What's WECEHACKS 2026?</h1>
+      <p>Presented by Women in Electrical & Computer Engineering at the University of Illinois Urbana-Champaign, join us for a three-day event filled with hardware, software, and cybersecurity challenges! Learn how to hack into a website, build a dinosaur game in Arduino, and work with JavaScript! Network with industry pros and fellow innovators. All majors and genders are welcome! Secure your spot now!</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSceCxvTO8y0vbgcolWh7y8m2PVUMlMeAtlKgpkC113mWGKzNQ/viewform?usp=header" target="_blank" style="text-decoration: none;">
+        <button id="registration-button">
+          REGISTER NOW
+        </button>
+      </a>
+    </div>
+  </div>
+
+
+  
+  <div class="sponsors-section">
+    <h1>Sponsors</h1>
+    <p>Thank you to our sponsors for making this event possible!</p>
     
-    <!-- Sponsor 1 -->
     <div class="sponsor-images">
       <img src="union_pacific.webp" alt="Union Pacific" />
       <img src="collins_aerospace.png" alt="Collins Aerospace" />
@@ -62,122 +74,8 @@
     </div>
   </div>
 
-  <div class="faq-section" id="faq">
-    <div class="image-container">
-    <img src="confused.gif" alt="stuck?" class="resized-image" />
-     </div>
-    <h2>FAQs</h2>
 
-    <!-- FAQ 1 -->
-    <div class="faq-item">
-      <p><strong>Q1:</strong> What is a Hackathon?</p>
-      <p><strong>A:</strong> A Hackathon is an event spanning 1-2 days where participants can create projects in teams, attend workshops, and network with sponsors!</p>
-    </div>
-
-    <!-- FAQ 2 -->
-    <div class="faq-item">
-      <p><strong>Q2:</strong> Do I need to do anything prior to attending?</p>
-      <p><strong>A:</strong> No; no experience is necessary. However, we recommend downloading VSCode, having a Github account, and having Git installed.</p>
-    </div>
-
-    <!-- FAQ 3 -->
-    <div class="faq-item">
-      <p><strong>Q3:</strong> Does it cost money to attend?</p>
-      <p><strong>A:</strong> No; all meals and snacks will be provided. Remember to bring laptops and chargers!</p>
-    </div>
-
-    <!-- FAQ 4 -->
-    <div class="faq-item">
-      <p><strong>Q4:</strong> When and where will WECE Hacks take place?</p>
-      <p><strong>A:</strong> All events will take place in the Electrical & Computer Engineering Building, room 3002 on campus. See the schedule section below for more details and times.</p>
-    </div>
-
-    <!-- FAQ 5 -->
-    <div class="faq-item">
-      <p><strong>Q5:</strong> What if I don't have a team?</p>
-      <p><strong>A:</strong> No worries! We will have a social event and discord channel for creating teams! You can create projects in teams of 1-4, and participate in the CTF individually or in partners. A final team formation form will be sent closer to WECE Hacks.</p>
-    </div>
-  </div>
-
-  <div class="schedule-section" id="schedule">
-    <h2>Schedule</h2>
-    <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Time</th>
-          <th>Event</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Friday</td>
-          <td>5:00 PM - 7:00 PM</td>
-          <td>Networking Banquet and Opening Ceremony</td>
-        </tr>
-        <tr>
-          <td rowspan="9">Saturday</td>
-          <td>9:30 AM - 9:45 AM</td>
-          <td>Setup and Team Check-In</td>
-        </tr>
-        <tr>
-          <td>10:00 AM - 10:30 AM</td>
-          <td>Breakfast + Welcome Ceremony</td>
-        </tr>
-        <tr>
-          <td>10:30 AM - 12:00 PM</td>
-          <td>Workshop and Challenge #1 - Hardware</td>
-        </tr>
-        <tr>
-          <td>12:00 PM - 1:00 PM</td>
-          <td>Lunch</td>
-        </tr>
-        <tr>
-          <td>1:00 PM - 2:00 PM</td>
-          <td>Workshop and Challenge #2 - Software</td>
-        </tr>
-        <tr>
-          <td>2:00 PM - 6:00 PM</td>
-          <td>Team Working Time with STMicroelectronics Tech Table</td>
-        </tr>
-        <tr>
-          <td>6:00 PM - 7:00 PM</td>
-          <td>Dinner Break + Social</td>
-        </tr>
-        <tr>
-          <td>7:00 PM - 9:00 PM</td>
-          <td>Team Working Time</td>
-        </tr>
-        <tr>
-          <td>9:00 PM - 10:00 PM</td>
-          <td>Final Announcements + Closing Social</td>
-        </tr>
-        <tr>
-          <td rowspan="5">Sunday</td>
-          <td>9:30 AM - 10:00 AM</td>
-          <td>Setup and Check-In</td>
-        </tr>
-        <tr>
-          <td>10:00 AM - 1:00 PM</td>
-          <td>CTF with SIGPwny</td>
-        </tr>
-        <tr>
-          <td>10:00 AM - 1:00 PM</td>
-          <td>Team Work Time with Lunch</td>
-        </tr>
-        <tr>
-          <td>1:00 PM - 2:00 PM</td>
-          <td>Final Presentations</td>
-        </tr>
-        <tr>
-          <td>2:00 PM - 3:00 PM</td>
-          <td>Announce Winners, Closing Ceremony</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="tools-resources-section" id="tools-resources">
+  <!-- <div class="tools-resources-section" id="tools-resources">
     <h2>Tools and Resources</h2>
     <p>This section contains tools and resources you need to get started with your projects at WECE Hacks 2025.</p>
     <a href="https://code.visualstudio.com/docs/getstarted/getting-started" target="_blank" style="text-decoration: none;">
@@ -201,10 +99,24 @@
       </button>
     </a>
     <p>Stay tuned for more information coming soon!</p>
-  </div>
+  </div> -->
 
-  <!-- Countdown Timer -->
+  
+  <!-- JAVASCRIPT CODE -->
   <script>
+    // header changes color to black when scrolling
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+
+    // Countdown Timer
     document.querySelectorAll('.scroll-link').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -216,7 +128,7 @@
 
     // Countdown Timer Functionality
     function updateCountdown() {
-      const countdownDate = new Date("Feb 21, 2025 00:00:00").getTime();
+      const countdownDate = new Date("Feb 21, 2026 00:00:00").getTime();
       const now = new Date().getTime();
       const timeLeft = countdownDate - now;
 
