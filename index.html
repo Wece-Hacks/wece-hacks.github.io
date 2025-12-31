@@ -18,15 +18,13 @@
 
 <body>
   
-  <!-- Button Panel -->
-   <!-- test -->
-  <div class="panel">
-    <a href="#home" class="scroll-link">Home</a>
-    <a href="#get-started" class="scroll-link">Get Started</a>
-    <a href="#sponsors" class="scroll-link">Sponsors</a>
-    <a href="#faq" class="scroll-link">FAQ</a>
-    <a href="#schedule" class="scroll-link">Schedule</a>
-    <a href="#tools-resources" class="scroll-link">Tools and Resources</a>
+  <!-- Header -->
+  <div class="header">
+    <a href="./index.html">Home</a>
+    <a href="./pages/prizes.html">Prizes</a>
+    <a href="./pages/schedule.html">Schedule</a>
+    <a href="./pages/faq.html">FAQ</a>
+    <a href="./pages/ourteam.html">Our Team</a>
   </div>
   
   <!-- hero section -->
@@ -114,17 +112,6 @@
       } else {
         header.classList.remove('scrolled');
       }
-    });
-
-
-    // Countdown Timer
-    document.querySelectorAll('.scroll-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      });
     });
 
     // Countdown Timer Functionality

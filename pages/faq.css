@@ -1,0 +1,105 @@
+body {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: url('../images/bridge_background.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+    background-color: #000000;
+    
+    scroll-behavior: smooth;
+  }
+
+  /* Styling the header itself*/
+  .header {
+    position: sticky;
+    background-color: transparent;
+    top: 0; /* Aligns to the top of the viewport */
+    width: 100%; /* Full width */
+    display: flex; /* Align items in a row */
+    justify-content: space-around; /* Equal spacing between links */
+    padding: 20px 0px 20px 0px; /* top right bottom left */
+  }
+
+  /* When scrolled, header background turns black */
+  .header.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);; /* or solid black */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Styling the links */
+  .header a {
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust text size */
+    font-weight: bold; /* Optional: Bold text */
+    padding: 5px 10px; /* Add spacing inside the clickable area */
+    border-radius: 4px; /* Optional: Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  }
+
+  /* Hover effect for links */
+  .header a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    color: #f0f0f0; /* Optional: Slightly dim the text on hover */
+  }
+
+  /* Add spacing between sections to prevent overlap */
+  .section {
+    padding-top: 80px; /* Matches or exceeds the header height to prevent overlap */
+    margin-top: -80px; /* Counteracts padding to keep sections aligned */
+  }
+
+  .faq-title {
+    margin-top: 70px;
+    padding: 50px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .faq-title img {
+    width: 45%;
+  }
+
+
+  /* FAQ Section */
+  .faq-section {
+    width: 80.5%;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .faq-section h2 {
+    padding: 50px;
+    font-size: 35px;
+    color: #333;
+    text-align: center;
+  }
+
+  .faq-section p {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .faq-section .faq-item {
+    margin-bottom: 20px;
+    background-color: #d6c39f;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-section .faq-item strong {
+    color: #333;
+  }
