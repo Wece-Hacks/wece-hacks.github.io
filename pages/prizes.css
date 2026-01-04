@@ -13,7 +13,7 @@ body {
     position: sticky;
     background-color: transparent;
     top: 0; /* Aligns to the top of the viewport */
-    width: 100%; /* Full width */
+    width: 50%; /* Full width */
     display: flex; /* Align items in a row */
     justify-content: space-around; /* Equal spacing between links */
     padding: 20px 0px 20px 0px; /* top right bottom left */
