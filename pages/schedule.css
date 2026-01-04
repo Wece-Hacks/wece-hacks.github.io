@@ -4,7 +4,7 @@
 :root {
   --bg: #0f0f13;
   --text: #eef2f7;
-  --muted: #9aa4b2;
+  --muted: hsl(214, 15%, 69%);
   --accent: #6f2806;
   --accent-2: #866104;
   --success: #b76920;
