@@ -82,14 +82,17 @@ body {
    Schedule title image
 ========================== */
 .faq-title {
-  margin-top: 70px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   padding: 50px;
   width: 50%;
   display: flex;
   justify-content: center;
 }
 .faq-title img {
-  width: 45%;
+  width: 70%;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ==========================
@@ -120,7 +123,7 @@ body {
 /* Each event slot */
 .slot {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: 14px;
   padding: 14px;
   align-items: start;
