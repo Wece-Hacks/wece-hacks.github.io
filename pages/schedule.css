@@ -204,3 +204,7 @@ body {
   color: var(--muted);
 }
 /* Add spacing between sections to prevent overlap */
+.section {
+  padding-top: 80px; /* Matches or exceeds the header height to prevent overlap */
+  margin-top: -80px; /* Counteracts padding to keep sections aligned */
+}
