@@ -1,17 +1,52 @@
-:root {
- }
-
 body {
   margin: 0;
   font-family: sans-serif;
   background-image: 
   linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.199)),
-    url('/images/jungle_background.png');
+    url('../images/jungle_background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+/* Styling the header itself*/
+.header {
+    position: sticky;
+    background-color: transparent;
+    top: 0; /* Aligns to the top of the viewport */
+    width: 100%; /* Full width */
+    display: flex; /* Align items in a row */
+    justify-content: space-around; /* Equal spacing between links */
+    padding: 20px 0px 20px 0px; /* top right bottom left */
+  }
 
+  /* When scrolled, header background turns black */
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);; /* or solid black */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Styling the links */
+.header a {
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust text size */
+    font-weight: bold; /* Optional: Bold text */
+    padding: 5px 10px; /* Add spacing inside the clickable area */
+    border-radius: 4px; /* Optional: Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  }
+
+  /* Hover effect for links */
+.header a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    color: #f0f0f0; /* Optional: Slightly dim the text on hover */
+  }
+
+  /* Add spacing between sections to prevent overlap */
+.section {
+    padding-top: 80px; /* Matches or exceeds the header height to prevent overlap */
+    margin-top: -80px; /* Counteracts padding to keep sections aligned */
+}
 .prizes-container {
   display: flex;
   flex-wrap: wrap;
