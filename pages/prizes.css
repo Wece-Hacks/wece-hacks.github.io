@@ -1,0 +1,56 @@
+:root {
+ }
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.199)),
+    url('/images/jungle_background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.prizes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+}
+
+.prize {
+  flex: 1 1 calc(33.33% - 40px); /* 3 per row */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.prize img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.prize h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .prize {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .prize {
+    flex: 1 1 90%;
+  }
+}
