@@ -1,11 +1,7 @@
-/* ==========================
-   Root variables
-========================== */
+/* Root variables */
 :root {
   --bg: #0f0f13;
   --text: #eef2f7;
-  --accent: #6f2806;
-  --accent-2: #866104;
   --radius: 12px;
   --gap: 20px;
   --software: #6c63ff;
@@ -13,9 +9,7 @@
   --marketing: #00c2a0;
 }
 
-/* ==========================
-   Global Styles
-========================== */
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,9 +26,7 @@ body {
   min-height: 100vh;
 }
 
-/* ==========================
-   Header
-========================== */
+/* Header */
 .header {
   position: sticky;
   top: 0;
@@ -45,7 +37,6 @@ body {
   padding: 15px 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header a {
@@ -55,17 +46,14 @@ body {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .header a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  color: #f0f0f0;
 }
 
-/* ==========================
-   Title Image
-========================== */
+/* Title Image */
 .title-image {
   margin: 30px 0;
   width: 90%;
@@ -80,20 +68,20 @@ body {
   border-radius: var(--radius);
 }
 
-/* ==========================
-   Department Rectangles
-========================== */
-.container {
+/* Three Columns Layout */
+.columns {
   display: flex;
-  gap: var(--gap);
-  flex-wrap: wrap; /* allows stacking on small screens */
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  gap: var(--gap);
+  width: 90%;
+  max-width: 1000px;
+  flex-wrap: wrap; /* stacks on small screens */
+  margin-bottom: 50px;
 }
 
-.department {
-  width: 200px;
+.column {
+  flex: 1;
+  min-width: 200px;
   height: 150px;
   border-radius: var(--radius);
   display: flex;
@@ -106,23 +94,25 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Colors */
 .software { background-color: var(--software); }
 .hardware { background-color: var(--hardware); }
 .marketing { background-color: var(--marketing); }
 
-/* Hover effect */
-.department:hover {
+.column:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* ==========================
-   Responsive
-========================== */
-@media (max-width: 650px) {
-  .department { width: 80%; margin-bottom: 15px; }
+/* Responsive */
+@media (max-width: 700px) {
+  .columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    width: 80%;
+    margin-bottom: 20px;
+  }
 }
-@media (max-width: 400px) {
-  .header a { font-size: 14px; padding: 4px 8px; }
-}
+/* Footer */
