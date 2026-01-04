@@ -33,7 +33,9 @@ body {
   align-items: center;
 
   /* Background image */
-  background-image: url('/images/stoneball_background.png');
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.199)),
+    url('/images/stoneball_background.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: top center;
@@ -90,7 +92,7 @@ body {
   justify-content: center;
 }
 .faq-title img {
-  width: 70%;
+  width: 90%;
   max-width: 100%;
   height: auto;
 }
