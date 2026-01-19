@@ -4,9 +4,9 @@
   --text: #eef2f7;
   --radius: 12px;
   --gap: 20px;
-  --software: #6c63ff;
-  --hardware: #ff6584;
-  --marketing: #00c2a0;
+  --software: #ad6f0b;
+  --hardware: #915109;
+  --marketing: #6b3a04;
 }
 
 /* Global Styles */
@@ -17,6 +17,10 @@
 }
 
 body {
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.199)),
+    url('/images/stoneball_background.png');
+  
   font-family: 'Libre Baskerville', serif;
   background-color: var(--bg);
   color: var(--text);
