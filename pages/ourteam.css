@@ -20,7 +20,7 @@ body {
   background-image: 
   linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.199)),
     url('/images/stoneball_background.png');
-  
+
   font-family: 'Libre Baskerville', serif;
   background-color: var(--bg);
   color: var(--text);
@@ -59,9 +59,10 @@ body {
 
 /* Title Image */
 .title-image {
-  margin: 30px 0;
-  width: 90%;
-  max-width: 600px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 50px;
+  width: 50%;
   display: flex;
   justify-content: center;
 }
