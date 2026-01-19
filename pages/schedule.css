@@ -22,9 +22,7 @@
 * {
   box-sizing: border-box;
 }
-html, body {
-  height: 100%;
-}
+
 body {
   margin: 0;
   font-family: 'Libre Baskerville', serif;
@@ -35,7 +33,7 @@ body {
   /* Background image */
   background-image: 
   linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.199)),
-    url('/images/stoneball_background.png');
+    url('../images/stoneball_background.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: top center;
@@ -46,7 +44,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.45;
-  padding: 48px 20px;
 }
 
 /* ==========================
@@ -59,8 +56,8 @@ body {
   display: flex;
   justify-content: space-around;
   background-color: transparent;
-  padding: 20px 0;
-  z-index: 100;
+  padding: 20px 0px 20px 0px;
+  /* z-index: 100; */
 }
 .header a {
   color: white;
@@ -104,6 +101,7 @@ body {
   width: 80%;
   margin-top: 20px;
   margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 /* Timetable list */
@@ -115,11 +113,14 @@ body {
 
 /* Day header */
 .day-header h2 {
-  font-size: 22px;
+  font-size: 300%;
+  font-family: 'Cinzel', serif;
+  color: #ece5db;
   margin-bottom: 12px;
-  color: var(--text);
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 6px;
+  text-align: center;
+  text-shadow: 2px 5px 1px rgba(0, 0, 0, 0.9); /* offsets + blur + color */
 }
 
 /* Each event slot */
@@ -130,7 +131,7 @@ body {
   padding: 14px;
   align-items: start;
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
   border: 1px solid rgba(255,255,255,0.03);
   transition: transform 0.14s ease, box-shadow 0.14s ease;
 }

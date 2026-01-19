@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Team</title>
   <link rel="stylesheet" href="ourteam.css">
+  
+  <!-- Link to Cinzel font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+
+  <!-- Link to Libre Baskerville font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <!-- Header -->
@@ -21,11 +30,77 @@
     <img src="../images/Our-Team-1-4-2026.png" alt="Our Team">
   </div>
 
-  <!-- Three Columns -->
-  <div class="columns">
-    <div class="column software">Software</div>
-    <div class="column hardware">Hardware</div>
-    <div class="column marketing">Marketing</div>
+ <!-- Team Section -->
+<div class="team-grid">
+
+  <!-- Team Member -->
+  <div class="team-member">
+    <img src="../images/team_photos/anna_wilkowski.JPG" alt="Anna Wilkowski">
+    <div class="name">Anna Wilkowski</div>
+    <div class="role">Director</div>
   </div>
+
+  <div class="team-member">
+    <img src="../images/team_photos/kavya_peela.png" alt="Kavya Peela">
+    <div class="name">Kavya Peela</div>
+    <div class="role">Software Chair</div>
+  </div>
+
+  <div class="team-member">
+    <img src="../images/team_photos/jihoo_kim.png" alt="Jihoo Kim">
+    <div class="name">Jihoo Kim</div>
+    <div class="role">Software Chair</div>
+  </div>
+
+  <div class="team-member">
+    <img src="../images/team_photos/caroline_thomas.png" alt="Caroline Thomas">
+    <div class="name">Caroline Thomas</div>
+    <div class="role">Marketing Chair</div>
+  </div>
+
+  <div class="team-member">
+    <img src="../images/team_photos/annabel_li.jpg" alt="Annabel Li">
+    <div class="name">Annabel Li</div>
+    <div class="role">Hardware</div>
+  </div>
+
+  <div class="team-member">
+    <img src="../images/team_photos/mina_gasson.jpg" alt="Mina Gasson">
+    <div class="name">Mina Gasson</div>
+    <div class="role">Hardware Team</div>
+  </div>
+
+  <div class="team-member">
+    <img src="../images/team_photos/jung_shim.jpg" alt="Jung Shim">
+    <div class="name">Jung Shim</div>
+    <div class="role">Hardware Team</div>
+  </div>
+
+  <div class="team-member">
+    <img src="../images/team_photos/kevin_yen.jpg" alt="Kevin Yen">
+    <div class="name">Kevin Yen</div>
+    <div class="role">Software Team</div>
+  </div>
+
+
+  <!-- Add more team members here -->
+  
+</div>
+
+<!-- JAVASCRIPT CODE -->
+<script>
+  // header changes color to black when scrolling
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+
+
 </body>
 </html>

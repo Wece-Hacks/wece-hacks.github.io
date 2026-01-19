@@ -17,11 +17,13 @@
 }
 
 body {
-  background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.199)),
-    url('/images/stoneball_background.png');
-
   font-family: 'Libre Baskerville', serif;
+  background-image: url('../images/treasure_background.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+  background-color: #000000;
+  
   background-color: var(--bg);
   color: var(--text);
   display: flex;
@@ -30,32 +32,39 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
+
+/* Styling the header itself*/
 .header {
   position: sticky;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 15px 0;
   background-color: transparent;
-  z-index: 100;
+  top: 0; /* Aligns to the top of the viewport */
+  width: 100%; /* Full width */
+  display: flex; /* Align items in a row */
+  justify-content: space-around; /* Equal spacing between links */
+  padding: 20px 0px 20px 0px; /* top right bottom left */
 }
-
+/* When scrolled, header background turns black */
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);; /* or solid black */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+/* Styling the links */
 .header a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Adjust text size */
+  font-weight: bold; /* Optional: Bold text */
+  padding: 5px 10px; /* Add spacing inside the clickable area */
+  border-radius: 4px; /* Optional: Rounded edges */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+/* Hover effect for links */
+.header a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  color: #f0f0f0; /* Optional: Slightly dim the text on hover */
 }
 
-.header a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
+
 
 /* Title Image */
 .title-image {
@@ -72,52 +81,59 @@ body {
   height: auto;
   border-radius: var(--radius);
 }
-
-/* Three Columns Layout */
-.columns {
-  display: flex;
-  justify-content: center;
-  gap: var(--gap);
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   width: 90%;
-  max-width: 1000px;
-  flex-wrap: wrap; /* stacks on small screens */
-  margin-bottom: 50px;
+  max-width: 1200px;
+  margin: 40px auto;
 }
 
-.column {
-  flex: 1;
-  min-width: 200px;
-  height: 150px;
+/* Each Team Member Card */
+.team-member {
+  background: rgba(0, 0, 0, 0.3); /* semi-transparent */
   border-radius: var(--radius);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
+  text-align: center;
+  padding: 15px;
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.software { background-color: var(--software); }
-.hardware { background-color: var(--hardware); }
-.marketing { background-color: var(--marketing); }
+.team-member img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
 
-.column:hover {
+.team-member .name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.team-member .role {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Hover effect */
+.team-member:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .columns {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .column {
-    width: 80%;
-    margin-bottom: 20px;
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .team-member img {
+    width: 100px;
+    height: 100px;
   }
 }
+
 /* Footer */

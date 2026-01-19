@@ -60,7 +60,7 @@ body {
 }
 
 /* Title Image */
-.faq-title {
+.prizes-title {
   margin-top: 20px;
   margin-bottom: 10px;
   padding: 50px;
@@ -68,8 +68,8 @@ body {
   display: flex;
   justify-content: center;
 }
-.faq-title img {
-  width: 60%;
+.prizes-title img {
+  width: 30%;
   max-width: 100%;
   height: auto;
 }
