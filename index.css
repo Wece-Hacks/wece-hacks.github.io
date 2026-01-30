@@ -92,7 +92,7 @@ body {
   /* countdown timer */
   .countdown {
     margin-top: 0px;
-    width: 40%; /* width that fits the longest time */
+    width: min(90%, 500px); /* width that fits the longest time */
     padding: 0px 20px 40px 40px;
     /* background: linear-gradient(
       to bottom,
